@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="traffic-daemon" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/traffic-daemon" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="net" />
+					<Add directory="src" />
+					<Add directory="src/winpcap/Include/pcap" />
+					<Add directory="src/winpcap/Include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/traffic-daemon" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="net" />
+					<Add directory="src" />
+					<Add directory="src/winpcap/Include/pcap" />
+					<Add directory="src/winpcap/Include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pedantic" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-std=c++14" />
+			<Add option="-fexceptions" />
+			<Add directory="models" />
+			<Add directory="../traffic-daemon" />
+			<Add directory="data" />
+			<Add directory="exception" />
+			<Add directory="nlohmann" />
+			<Add directory="winpcap/Include" />
+			<Add directory="winpcap/Include/pcap" />
+		</Compiler>
+		<Linker>
+			<Add library="src/curl/libcurl.a" />
+			<Add library="src/curl/libcurldll.a" />
+			<Add library="src/winpcap/Lib/libpacket.a" />
+			<Add library="src/winpcap/Lib/libwpcap.a" />
+			<Add library="src/winpcap/Lib/libws2_32.a" />
+		</Linker>
+		<Unit filename="main.cpp" />
+		<Unit filename="src/data/Database.cpp" />
+		<Unit filename="src/data/Database.h" />
+		<Unit filename="src/data/Database_Curl.cpp" />
+		<Unit filename="src/data/Database_Curl.h" />
+		<Unit filename="src/exception/DatabaseException.h" />
+		<Unit filename="src/exception/PCapException.h" />
+		<Unit filename="src/model/DataBalance.cpp" />
+		<Unit filename="src/model/DataBalance.h" />
+		<Unit filename="src/model/Model.h" />
+		<Unit filename="src/model/TrafficFilter.h" />
+		<Unit filename="src/model/User.cpp" />
+		<Unit filename="src/model/User.h" />
+		<Unit filename="src/model/UserMap.h" />
+		<Unit filename="src/net/AbstractPacketHandler.h" />
+		<Unit filename="src/net/DefaultDevice.cpp" />
+		<Unit filename="src/net/DefaultDevice.h" />
+		<Unit filename="src/net/PCap.cpp" />
+		<Unit filename="src/net/PCap.h" />
+		<Unit filename="src/net/PacketHandler.cpp" />
+		<Unit filename="src/net/PacketHandler.h" />
+		<Unit filename="src/net/protocol_header.h" />
+		<Unit filename="src/net/util.h" />
+		<Unit filename="src/util/md5.cpp" />
+		<Unit filename="src/util/md5.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
